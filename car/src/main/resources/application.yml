@@ -1,9 +1,9 @@
 server:
-    port: 8082
+    port: 8089
 spring:
   cloud:
     consul:
-      host: localhost
+      host: consul
       port: 8500
       discovery:
         service-name: SERVICE-CAR
@@ -11,9 +11,9 @@ spring:
     name: SERVICE-CAR
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/carservicedb?createDatabaseIfNotExist=true
-    username: "root"
-    password: "1234567890"
+    url: jdbc:mysql://mysql:3306/Micro_CarDB?createDatabaseIfNotExist=true
+    username: root
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,6 +21,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
 
     
 
